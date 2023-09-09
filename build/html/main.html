@@ -1,0 +1,89 @@
+<main>
+	<div class="wrapper">
+		<div class="select-area__container">
+			<div class="select-area__placeholder" id="placeholder">
+				<span id="spanClickToSelect">Click to Select</span>
+				<img src="/assets/img/load.gif" alt=""
+					class="select-area__loading-spinner" id="loadingSpinner" hidden>
+
+				<img id="image" class="select-area__img" />
+				<canvas class="select-area__img" id="canvas">
+					Ваш браузер не поддерживает canvas. Попробуйте
+					обновить или сменить браузер
+				</canvas>
+			</div>
+			<input id="input" class="select-area__input" type="file" />
+			<div class="select-area__btn-container">
+				<button class="select-area__btn" id="newText" disabled>
+					Создать текст
+				</button>
+				<button class="select-area__btn" id="download" disabled>
+					Скачать
+				</button>
+				<button class="select-area__btn" id="close">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
+						fill="Black">
+						<path
+							d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z" />
+					</svg>
+				</button>
+			</div>
+
+		</div>
+		<div class="tools__container">
+			<div class="tools-item">
+				<label for="fonts">Шрифт:</label>
+				<select id="fonts">
+					<option>Impact</option>
+					<option>Compact</option>
+					<option>Lobster</option>
+					<option>Arial</option>
+					<option>Arial Black</option>
+					<option>Arial Light</option>
+					<option>Arial CE MT Black</option>
+				</select>
+				<span class="bar"></span>
+			</div>
+			<div class="tools-item">
+				<label for="fontSize">Размер шрифта:</label>
+				<input id="fontSize" type="text" value="320">
+				<select id="fontSizeUnits">
+					<option>px</option>
+					<option>rem</option>
+				</select>
+				<span class="bar"></span>
+			</div>
+			<div class="tools-item">
+				<input id="inputText" type="text" value="Подпись">
+				<span class="bar"></span>
+				<label for="inputText">Изменить текст:</label>
+			</div>
+			<div class="tools-item">
+				<input type="range" id="color" class="range" min="0" max="360"
+					value="0">
+				<span id="colorRangeValue">0</span>
+				<label for="color">Цвет:</label>
+			</div>
+			<div class="tools-item">
+				<input type="range" id="saturation" class="range" min="0" max="100"
+					value="95">
+				<span id="saturationRangeValue">95</span>
+				<label for="saturation">Насыщенность:</label>
+			</div>
+			<div class="tools-item">
+				<input type="range" id="lightness" class="range" min="0" max="100"
+					value="50">
+				<span id="lightnessRangeValue">50</span>
+				<label for="lightness">Яркость:</label>
+			</div>
+
+			<div class="tools-item">
+				<input type="range" id="alpha" class="range" min="0" max="1" step="0.1"
+					value="0.9">
+				<span id="alphaRangeValue">0.9</span>
+				<label for="alpha">Прозрачность:</label>
+			</div>
+
+		</div>
+	</div>
+</main>

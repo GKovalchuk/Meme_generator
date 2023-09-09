@@ -1,0 +1,127 @@
+.tools {
+	&__container {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(2, 1fr);
+		margin: 2rem 0;
+	}
+}
+
+.tools-item {
+	position: relative;
+	display: flex;
+	margin-bottom: 1rem;
+
+	label {
+		position: absolute;
+		pointer-events: none;
+		top: -1rem;
+		left: 0rem;
+		font-size: 0.75rem;
+		color: $gray--darker;
+		transition: 0.2s ease all;
+		-moz-transition: 0.2s ease all;
+		-webkit-transition: 0.2s ease all;
+	}
+
+	input,
+	select {
+		display: -webkit-box;
+		width: 100%;
+		padding: 0.5rem;
+		border: none;
+		border-bottom: 0.0625rem solid $gray--darker;
+		background-color: $bg-light;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: pre-line;
+		font-size: 1rem;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+	}
+
+	input:focus,
+	select:focus {
+		outline: transparent;
+	}
+
+	.bar:before,
+	.bar:after {
+		content: "";
+		position: absolute;
+		bottom: 0.0625rem;
+		height: 0.125rem;
+		width: 0;
+		background: $accent-color;
+		transition: 0.2s ease all;
+		-moz-transition: 0.2s ease all;
+		-webkit-transition: 0.2s ease all;
+	}
+	.bar:before {
+		left: 50%;
+	}
+	.bar:after {
+		right: 50%;
+	}
+
+	select:focus ~ .bar:before,
+	select:focus ~ .bar:after,
+	input:focus ~ .bar:before,
+	input:focus ~ .bar:after {
+		width: 50%;
+	}
+
+	.range {
+		width: 80%;
+		height: 0.25rem;
+		background: transparent;
+		outline: transparent;
+		border-radius: 1rem;
+		overflow: hidden;
+		border: 0.0625rem solid $primary-color;
+		appearance: none;
+		-webkit-appearance: none;
+		~ span {
+			width: 20%;
+			margin: 0 0.5rem;
+			font-size: 1rem;
+			text-align: center;
+		}
+	}
+	.range::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		width: 0.5rem;
+		height: 1.5rem;
+
+		background: $primary-color;
+		cursor: pointer;
+		box-shadow: -403px 0 0 400px $accent-color;
+	}
+	#color {
+		background-image: url("/assets/img/Hue-Orig.png");
+		background-size: cover;
+	}
+	#color::-webkit-slider-thumb {
+		box-shadow: none;
+		width: 0.25rem;
+	}
+}
+
+#fontSize {
+	display: block;
+	width: 65%;
+}
+#fontSizeUnits {
+	display: block;
+	width: 35%;
+}
+
+@media (min-width: 768px) {
+	.tools {
+		&__container {
+			gap: 2rem;
+			grid-template-columns: repeat(3, 1fr);
+			margin: 3rem 0;
+		}
+	}
+}
