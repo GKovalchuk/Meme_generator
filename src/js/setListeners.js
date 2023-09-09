@@ -1,27 +1,15 @@
-const textInput = document.getElementById("inputText");
 const fontInput = document.getElementById("fonts");
-const fontSizeInput = document.getElementById("fontSize");
-const fontSizeUnitsInput = document.getElementById("fontSizeUnits");
 const colorInput = document.getElementById("color");
 const saturationInput = document.getElementById("saturation");
 const lightnessInput = document.getElementById("lightness");
 const alphaInput = document.getElementById("alpha");
 
 export const setListeners = () => {
-	[
-		textInput,
-		fontInput,
-		fontSizeInput,
-		fontSizeUnitsInput,
-		colorInput,
-		saturationInput,
-		lightnessInput,
-		alphaInput,
-	].forEach((elem) =>
+	[colorInput, saturationInput, lightnessInput, alphaInput].forEach((elem) =>
 		elem.addEventListener("input", ({ target }) => {
 			const id = target.id;
 			const value = target.value;
-			document.getElementById(`${id}RangeValue`).innerHTML = value;
+			if (id === "fonts") document.getElementById(`${id}RangeValue`).innerHTML = value;
 			if (value === target.max && target.id != "color") target.style.background = "#f87c56";
 			else if (target.id != "color") target.style.background = "transparent";
 		})
