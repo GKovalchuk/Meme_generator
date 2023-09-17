@@ -1,0 +1,162 @@
+.tools__container {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: (1fr)[2];
+	grid-template-columns: repeat(2, 1fr);
+
+	margin: 2rem 0;
+	gap: 1rem;
+}
+
+.tools-item {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+
+	margin-bottom: 1rem;
+}
+
+.tools-item label {
+	position: absolute;
+	top: -1rem;
+	left: 0rem;
+
+	pointer-events: none;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+
+	font-size: 0.75rem;
+	color: var(--gray--darker);
+}
+
+.tools-item input,
+.tools-item select {
+	display: -webkit-box;
+
+	width: 100%;
+
+	padding: 0.5rem;
+
+	border: none;
+	border-bottom: 0.0625rem solid var(--gray--darker);
+
+	background-color: var(--bg-light);
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: pre-line;
+	font-size: 1rem;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+
+.tools-item input:focus,
+.tools-item select:focus {
+	outline: transparent;
+}
+
+.tools-item .bar:before,
+.tools-item .bar:after {
+	content: "";
+
+	position: absolute;
+	bottom: 0.0625rem;
+
+	height: 0.125rem;
+	width: 0;
+
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+
+	background: var(--accent-color);
+}
+
+.tools-item .bar:before {
+	left: 50%;
+}
+
+.tools-item .bar:after {
+	right: 50%;
+}
+
+.tools-item select:focus ~ .bar:before,
+.tools-item select:focus ~ .bar:after,
+.tools-item input:focus ~ .bar:before,
+.tools-item input:focus ~ .bar:after {
+	width: 50%;
+}
+
+.tools-item .range {
+	width: 80%;
+	height: 0.25rem;
+
+	border-radius: 1rem;
+	background: transparent;
+
+	outline: transparent;
+	overflow: hidden;
+	border: var(--border--main);
+	-moz-appearance: none;
+	     appearance: none;
+	-webkit-appearance: none;
+}
+
+.tools-item .range ~ span {
+	width: 20%;
+
+	margin: 0 0.5rem;
+
+	font-size: 1rem;
+	text-align: center;
+}
+
+.tools-item .range::-webkit-slider-thumb {
+	width: 0.5rem;
+	height: 1.5rem;
+
+	background: var(--primary-color);
+
+	-webkit-box-shadow: -403px 0 0 400px var(--accent-color);
+
+	        box-shadow: -403px 0 0 400px var(--accent-color);
+	cursor: pointer;
+	-webkit-appearance: none;
+}
+
+#color {
+	background-image: url("/assets/img/Hue-Orig.png");
+	background-size: cover;
+}
+
+#color::-webkit-slider-thumb {
+	width: 0.25rem;
+
+	-webkit-box-shadow: none;
+
+	        box-shadow: none;
+}
+
+#fontSize {
+	display: block;
+
+	width: 65%;
+}
+
+#fontSizeUnits {
+	display: block;
+
+	width: 35%;
+}
+
+@media (min-width: 768px) {
+	.tools__container {
+		-ms-grid-columns: (1fr)[3];
+		grid-template-columns: repeat(3, 1fr);
+
+		gap: 2rem;
+		margin: 3rem 0;
+	}
+}

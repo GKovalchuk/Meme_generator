@@ -1,22 +1,27 @@
-@import "variables";
-@import "normalize";
+@import url("/assets/styles/variables.css");
+@import url("/assets/styles/normalize.css");
+@import url("/assets/styles/selectArea.css");
+@import url("/assets/styles/toolsBox.css");
 
 * {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 1rem;
 	text-align: left;
 	letter-spacing: 0.0625rem;
-	color: $primary-color;
+	color: var(--primary-color);
 }
 
 body {
 	margin: 0 2rem;
-	background-color: $bg-light;
+
+	background-color: var(--bg-light);
 }
 
 header {
 	max-height: 10vh;
+
 	padding: 1.5rem 0 2rem;
+
 	font-size: 2rem;
 	text-align: left;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -25,10 +30,8 @@ header {
 
 @media (min-width: 1168px) {
 	body {
-		margin: 0 auto;
 		width: 68.75rem;
+
+		margin: 0 auto;
 	}
 }
-
-@import "selectArea";
-@import "toolsBox";

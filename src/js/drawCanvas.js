@@ -124,8 +124,8 @@ export const drawCanvas = async () => {
 		// Проверка на возможность перемещения элемента.
 		if (dragAllowed) {
 			// Получаем текущее положение курсора.
-			let curX = parseInt(e.clientX * multW - offsetX * multW);
-			let curY = parseInt(e.clientY * multH - offsetY * multH);
+			let curX = Number(e.clientX * multW - offsetX * multW);
+			let curY = Number(e.clientY * multH - offsetY * multH);
 			// Получаем смещение.
 			let newX = curX - startX;
 			let newY = curY - startY;
